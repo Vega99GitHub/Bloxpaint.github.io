@@ -2,7 +2,12 @@ const http = require('http');
 
 const server = http.createServer((req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.end('¡Solicitud recibida desde Roblox!\n');
+    const dataToSend = {
+        message: "¡Hola, Roblox!",
+        score: 100
+    };
+    const jsonData = JSON.stringify(dataToSend);
+    res.end(jsonData);
 });
 
 const port = 3000;
